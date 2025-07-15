@@ -11,7 +11,7 @@ html{
 }
 
 body{
-  background-color: hsla(90, 30%, 75%, 1);
+  background-color: hsl(195, 40%, 80%);
 }
 
 .container{
@@ -54,7 +54,6 @@ body{
   align-items: center;
   justify-content: flex-end;
   color: hsla(0, 100%, 100%, .4);
-
 }
 
 .calc_display_past-operant{
@@ -90,6 +89,10 @@ body{
   place-items: center;
   font-size: 1.2rem;
   background-color: hsla(0, 100%, 100%, .2);
+}
+
+.calc_buttons-btn:hover{
+  background-color: hsla(0, 100%, 100%, .4);
 }
 
 .calc-btn-sum{
