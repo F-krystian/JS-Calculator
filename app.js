@@ -22,6 +22,9 @@ let updateDisplay = function() {
 
 let appendNumber = function(number) {
   if(!number) return;
+  if( number === "." && currentOperant.includes(".")) {
+    return;
+  }
   currentOperant += number;
   return currentOperant
 }
