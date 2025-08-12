@@ -12,6 +12,7 @@ let clearAllBtn = document.querySelector('.btn_clear-all')
 let currentOperant = '';
 let previousOperant = '';
 let operation = '';
+let justComputed = false;
 
 let updateDisplay = function() {
   displayCurrentOperant.innerText =  currentOperant;  
@@ -25,6 +26,11 @@ let appendNumber = function(number) {
   if( number === "." && currentOperant.includes(".")) {
     return;
   }
+  if(justComputed) {
+    currentOperant = "";
+    justComputed = false;
+  }
+
   currentOperant += number;
   return currentOperant
 }
@@ -36,8 +42,11 @@ let chooseOperation = function(op) {
     previousOperant = currentOperant;
     currentOperant = '';
   }
+
   if(previousOperant && currentOperant) {
-    previousOperant = compute();
+    let result = compute();
+    previousOperant = result.toString();
+    currentOperant = "";
   }
 
   operation = op;
@@ -119,9 +128,11 @@ operationBtns.forEach((btn) => {
 sumBtn.addEventListener('click', () => {
 
   if(previousOperant && currentOperant && operation) {
-    previousOperant = compute();
+    let result = compute();
+    currentOperant = result.toString()
     operation = '';
-    currentOperant = '';
+    previousOperant = '';
+    justComputed = true;
     updateDisplay();
   }
 })

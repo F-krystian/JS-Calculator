@@ -87,7 +87,7 @@ body{
   border-radius: .5rem;
   display: grid;
   place-items: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: hsla(0, 100%, 100%, .2);
 }
 
